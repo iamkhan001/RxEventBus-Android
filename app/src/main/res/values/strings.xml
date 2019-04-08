@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RxJavaTest</string>
+    <string name="press_button_to_send_events">Press Button to send events</string>
+</resources>
