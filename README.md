@@ -86,7 +86,23 @@ public final class RxBus {
 # Subscribe and UnSubscribe 
 Also, to simplify management of unsubscribing and keeping a reference to those subscriptions, I created a BaseActivity and BaseFragment.
 
-## For Activity
+###Subscribe  
+```sh
+
+  RxBus.subscribe(RxBus.SUBJECT_MY_SUBJECT, this, new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) {
+
+                        Data data = (Data) o;
+                        Toast.makeText(MainActivity.this,"Event Received\n"+data.getMessage(),Toast.LENGTH_SHORT).show();
+                        Log.v("Testing", data.getMessage());
+                    }
+                }
+        );
+```
+
+### Unsubscribe 
+####For Activity
 ```sh
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -99,7 +115,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 ```
 
-### for Fragment 
+#### for Fragment 
 ```sh
 public abstract class BaseFragment extends Fragment {
 
@@ -110,6 +126,14 @@ public abstract class BaseFragment extends Fragment {
     }
 }
 ```
+###Send Event 
+```sh
+
+    RxBus.publish(RxBus.SUBJECT_MY_SUBJECT,new Data("Hello World!"));
+
+```
+
+
 
 # Potential issues
 While working on this, I made a list of problems I had with the implementation. Some of which I believe can be addressed, others I’m not sure.
