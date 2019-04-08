@@ -83,7 +83,7 @@ public final class RxBus {
     }
 }
 ```
-# Subscribe and UnSubscribe 
+# Subscribe, Send Events and UnSubscribe 
 Also, to simplify management of unsubscribing and keeping a reference to those subscriptions, I created a BaseActivity and BaseFragment.
 
 ### Subscribe  
