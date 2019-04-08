@@ -86,7 +86,7 @@ public final class RxBus {
 # Subscribe and UnSubscribe 
 Also, to simplify management of unsubscribing and keeping a reference to those subscriptions, I created a BaseActivity and BaseFragment.
 
-###Subscribe  
+### Subscribe  
 ```sh
 
   RxBus.subscribe(RxBus.SUBJECT_MY_SUBJECT, this, new Consumer<Object>() {
@@ -102,7 +102,7 @@ Also, to simplify management of unsubscribing and keeping a reference to those s
 ```
 
 ### Unsubscribe 
-####For Activity
+#### For Activity
 ```sh
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -126,7 +126,7 @@ public abstract class BaseFragment extends Fragment {
     }
 }
 ```
-###Send Event 
+### Send Event 
 ```sh
 
     RxBus.publish(RxBus.SUBJECT_MY_SUBJECT,new Data("Hello World!"));
